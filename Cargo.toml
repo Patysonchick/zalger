@@ -1,0 +1,17 @@
+[package]
+name = "zalger"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+
+[profile.dev]
+opt-level = 0
+incremental = true
+codegen-units = 16
+
+[profile.release]
+lto = true
+codegen-units = 1
+opt-level = 3
+strip = true
