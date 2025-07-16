@@ -1,20 +1,17 @@
-use std::{fs, io};
+mod smbls;
 
-// const SIMBL: char = '\u{0F37}';
-const SYMBOL: char = '\u{034F}';
-const CO: usize = 10;
+use crate::smbls::Input;
+use std::{fs, io};
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let mut input = String::new();
-    let mut out = String::new();
+    // let mut out = String::new();
     io::stdin().read_line(&mut input)?;
 
-    for c in input.trim().chars() {
-        out.push(c);
-        for _ in 0..CO {
-            out.push(SYMBOL);
-        }
-    }
+    let mut input = Input::new(input);
+    input.smlr_depth();
+
+    let out = input.obfs();
 
     println!("{out}");
     println!("\nWritten to out.txt");
