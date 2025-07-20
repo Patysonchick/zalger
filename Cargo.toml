@@ -1,9 +1,12 @@
 [package]
 name = "zalger"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2024"
 
 [dependencies]
+console_error_panic_hook = "0.1.7"
+leptos = { version = "0.8.3", features = ["csr"] }
+web-sys = { version = "0.3.77", features = ["Navigator", "Clipboard"] }
 
 [profile.dev]
 opt-level = 0
@@ -15,3 +18,12 @@ lto = true
 codegen-units = 1
 opt-level = 3
 strip = true
+
+[profile.wasm-release]
+inherits = "release"
+opt-level = 'z'
+lto = true
+codegen-units = 1
+
+[package.metadata.leptos]
+lib-profile-release = "wasm-release"

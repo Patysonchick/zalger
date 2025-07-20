@@ -1,7 +1,8 @@
 debug/
 target/
+dist/
+node_modules/
 
-Cargo.lock
 **/*.rs.bk
 *.pdb
 

@@ -82,7 +82,7 @@ pub fn get_smbls_smlr() -> HashMap<char, char> {
     smbls_smlr.insert('о', 'ο');
     smbls_smlr.insert('а', 'α');
     smbls_smlr.insert('р', 'ρ');
-    smbls_smlr.insert('с', 'ѕ');
+    // smbls_smlr.insert('с', 'ѕ');
 
     smbls_smlr.insert('і', 'i');
     smbls_smlr.insert('І', 'I');
